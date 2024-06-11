@@ -1,17 +1,17 @@
-[![Docker Build](https://github.com/ai-dock/stable-diffusion-webui/actions/workflows/docker-build.yml/badge.svg)](https://github.com/ai-dock/stable-diffusion-webui/actions/workflows/docker-build.yml)
+[![Docker Build](https://github.com/ailaby/stable-diffusion-webui/actions/workflows/docker-build.yml/badge.svg)](https://github.com/ailaby/stable-diffusion-webui/actions/workflows/docker-build.yml)
 
 # Stable Diffusion WebUI Docker Image
 
 Run [Automatic1111 WebUI](https://github.com/AUTOMATIC1111/stable-diffusion-webui) in a docker container locally or in the cloud.
 
 >[!NOTE]  
->These images do not bundle models or third-party configurations. You should use a [provisioning script](https://github.com/ai-dock/base-image/wiki/4.0-Running-the-Image#provisioning-script) to automatically configure your container. You can find examples in `config/provisioning`.
+>These images do not bundle models or third-party configurations. You should use a [provisioning script](https://github.com/ailaby/base-image/wiki/4.0-Running-the-Image#provisioning-script) to automatically configure your container. You can find examples in `config/provisioning`.
 
 ## Documentation
 
-All AI-Dock containers share a common base which is designed to make running on cloud services such as [vast.ai](https://link.ai-dock.org/vast.ai) and [runpod.io](https://link.ai-dock.org/template) as straightforward and user friendly as possible.
+All ailaby containers share a common base which is designed to make running on cloud services such as [vast.ai](https://link.ailaby.org/vast.ai) and [runpod.io](https://link.ailaby.org/template) as straightforward and user friendly as possible.
 
-Common features and options are documented in the [base wiki](https://github.com/ai-dock/base-image/wiki) but any additional features unique to this image will be detailed below.
+Common features and options are documented in the [base wiki](https://github.com/ailaby/base-image/wiki) but any additional features unique to this image will be detailed below.
 
 
 #### Version Tags
@@ -35,7 +35,7 @@ Tags follow these patterns:
 
 - `:latest-cpu` &rarr; `:cpu-22.04` 
 
-Browse [here](https://github.com/ai-dock/stable-diffusion-webui/pkgs/container/stable-diffusion-webui) for an image suitable for your target environment.
+Browse [here](https://github.com/ailaby/stable-diffusion-webui/pkgs/container/stable-diffusion-webui) for an image suitable for your target environment.
 
 Supported Python versions: `3.10`
 
@@ -51,7 +51,7 @@ Supported Platforms: `NVIDIA CUDA`, `AMD ROCm`, `CPU`
 | `WEBUI_PORT_HOST`        | Web UI port (default `7860`) |
 | `WEBUI_URL`              | Override `$DIRECT_ADDRESS:port` with URL for Web UI |
 
-See the base environment variables [here](https://github.com/ai-dock/base-image/wiki/2.0-Environment-Variables) for more configuration options.
+See the base environment variables [here](https://github.com/ailaby/base-image/wiki/2.0-Environment-Variables) for more configuration options.
 
 ### Additional Micromamba Environments
 
@@ -61,12 +61,12 @@ See the base environment variables [here](https://github.com/ai-dock/base-image/
 
 This micromamba environment will be activated on shell login.
 
-See the base micromamba environments [here](https://github.com/ai-dock/base-image/wiki/1.0-Included-Software#installed-micromamba-environments).
+See the base micromamba environments [here](https://github.com/ailaby/base-image/wiki/1.0-Included-Software#installed-micromamba-environments).
 
 
 ## Additional Services
 
-The following services will be launched alongside the [default services](https://github.com/ai-dock/base-image/wiki/1.0-Included-Software) provided by the base image.
+The following services will be launched alongside the [default services](https://github.com/ailaby/base-image/wiki/1.0-Included-Software) provided by the base image.
 
 ### Stable Diffusion WebUI
 
@@ -79,23 +79,20 @@ You can set startup flags by using variable `WEBUI_FLAGS`.
 To manage this service you can use `supervisorctl [start|stop|restart] webui`.
 
 >[!NOTE]
->All services are password protected by default. See the [security](https://github.com/ai-dock/base-image/wiki#security) and [environment variables](https://github.com/ai-dock/base-image/wiki/2.0-Environment-Variables) documentation for more information.
+>All services are password protected by default. See the [security](https://github.com/ailaby/base-image/wiki#security) and [environment variables](https://github.com/ailaby/base-image/wiki/2.0-Environment-Variables) documentation for more information.
 
 
 ## Pre-Configured Templates
 
 **Vast.​ai**
 
-- [A1111 WebUI:latest-cuda](https://link.ai-dock.org/template-vast-sd-webui)
+- [A1111 WebUI:latest-cuda](https://link.ailaby.org/template-vast-sd-webui)
 
-- [A1111 WebUI:latest-rocm](https://link.ai-dock.org/template-vast-sd-webui-rocm)
+- [A1111 WebUI:latest-rocm](https://link.ailaby.org/template-vast-sd-webui-rocm)
 
 ---
 
 **Runpod.​io**
 
-- [A1111 WebUI:latest](https://link.ai-dock.org/template-runpod-sd-webui)
-
----
-
-_The author ([@robballantyne](https://github.com/robballantyne)) may be compensated if you sign up to services linked in this document. Testing multiple variants of GPU images in many different environments is both costly and time-consuming; This helps to offset costs_
+- [A1111 WebUI:latest](https://link.ailaby.org/template-runpod-sd-webui)
+([@robballantyne](https://github.com/robballantyne)) may be compensated if you sign up to services linked in this document. Testing multiple variants of GPU images in many different environments is both costly and time-consuming; This helps to offset costs_

@@ -72,7 +72,7 @@ CONTROLNET_MODELS=(
 ### DO NOT EDIT BELOW HERE UNLESS YOU KNOW WHAT YOU ARE DOING ###
 
 function build_extra_start() {
-    source /opt/ai-dock/etc/environment.sh
+    source /opt/ailaby/etc/environment.sh
     build_extra_get_mamba_packages
     build_extra_get_pip_packages
     build_extra_get_extensions

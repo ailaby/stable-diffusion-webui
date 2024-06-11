@@ -45,7 +45,7 @@ function start() {
     if [[ -f /run/workspace_sync || -f /run/container_config ]]; then
         fuser -k -SIGTERM ${LISTEN_PORT}/tcp > /dev/null 2>&1 &
         wait -n
-        /usr/bin/python3 /opt/ai-dock/fastapi/logviewer/main.py \
+        /usr/bin/python3 /opt/ailaby/fastapi/logviewer/main.py \
             -p $LISTEN_PORT \
             -r 5 \
             -s "${SERVICE_NAME}" \

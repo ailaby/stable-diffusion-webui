@@ -10,14 +10,14 @@ function preflight_main() {
 function preflight_copy_notebook() {
     if micromamba env list | grep 'jupyter' > /dev/null 2>&1;  then
         if [[ ! -f "${WORKSPACE}webui.ipynb" ]]; then
-            cp /usr/local/share/ai-dock/webui.ipynb ${WORKSPACE}
+            cp /usr/local/share/ailaby/webui.ipynb ${WORKSPACE}
         fi
     fi
 }
 
 function preflight_update_webui() {
     if [[ ${AUTO_UPDATE,,} == "true" ]]; then
-        /opt/ai-dock/bin/update-webui.sh
+        /opt/ailaby/bin/update-webui.sh
     else
         printf "Skipping auto update (AUTO_UPDATE != true)"
     fi
