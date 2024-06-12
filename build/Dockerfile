@@ -1,6 +1,6 @@
 # For build automation - Allows building from any ailaby base image
 # Use a *cuda*base* image as default because pytorch brings the libs
-ARG IMAGE_BASE="ghcr.io/ailaby/python:3.10-cuda-11.8.0-base-22.04"
+ARG IMAGE_BASE="ghcr.io/ailaby/python:3.10-cuda-12.1.1-base-22.04"
 FROM ${IMAGE_BASE}
 
 LABEL org.opencontainers.image.source=https://github.com/ailaby/stable-diffusion-webui
@@ -10,7 +10,7 @@ LABEL maintainer="voidump <voidump@gmail.com>"
 ARG PYTHON_VERSION="3.10"
 ENV PYTHON_VERSION="${PYTHON_VERSION}"
 
-ARG PYTORCH_VERSION="2.2.2"
+ARG PYTORCH_VERSION="2.3.0"
 ENV PYTORCH_VERSION="${PYTORCH_VERSION}"
 
 ARG WEBUI_TAG
